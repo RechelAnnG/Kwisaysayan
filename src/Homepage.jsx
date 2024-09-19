@@ -11,6 +11,11 @@ import OpenEnded from "./pages/OpenEndedPage";
 import DropDown from "./pages/DropDownPage";
 import PublishPage from "./components/create/PublishPage";
 import ViewPage from "./components/library/ViewPage";
+import QuestionBankPage from "./components/library/QuestionBankPage";
+import QuestionBankViewPage from "./components/library/QuestionBankViewPage";
+import QuestionBankTopicViewPage from "./components/library/QuestionBankTopicViewPage";
+import EditQuestionandAnswerModal from "./components/library/EditQuestionandAnswerModal";
+import CreateQuestionBankPage from "./components/library/CreateQuestionBankPage";
 
 const Homepage = () => {
   const [activeLink, setActiveLink] = useState(0);
@@ -30,6 +35,11 @@ const Homepage = () => {
                     <Route path="/Drop-down" element={<DropDown />} />
                     <Route path="/Publish-Page" element={<PublishPage />} />
                     <Route path="/View-Page" element={<ViewPage />} />
+                    <Route path="/Library/QuestionBank" element={<QuestionBankPage />} />
+                    <Route path="/Library/QuestionBankView" element={<QuestionBankViewPage />} />
+                    <Route path="/Library/QuestionBankTopicView" element={<QuestionBankTopicViewPage />} />
+                    <Route path="/Library/QuestionBankTopicView/Edit" element={<EditQuestionandAnswerModal />} />
+                    <Route path="/Library/QuestionBank/Create" element={<CreateQuestionBankPage />} />
                 </Routes>
             </div>
      </div>

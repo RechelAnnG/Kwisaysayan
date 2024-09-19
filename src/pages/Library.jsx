@@ -1,16 +1,14 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import addButtonBrown from '../assets/images/addButtonBrown-icon.png'
-import addButtonWhite from '../assets/images/addButtonWhite.png'
-import CreateModal from '../components/create/CreateModal'
+import addButtonBrown from '../assets/images/addButtonBrown-icon.png';
+import addButtonWhite from '../assets/images/addButtonWhite.png';
+import CreateModal from '../components/create/CreateModal';
 
 function Library() {
-
   const navigate = useNavigate(); // Initialize navigate function
 
-  const [isHovered, setIsHovered] = useState(false)
-  // State to track which tab is selected
+  const [isHovered, setIsHovered] = useState(false);
   const [selectedTab, setSelectedTab] = useState('Published');
   const [createquizmodal, createquizsetModal] = useState(false);
 
@@ -18,13 +16,20 @@ function Library() {
     createquizsetModal(!createquizmodal);
   };
 
-   // Handle save button click
-   const handleViewPageClick = () => {
+  // Handle save button click
+  const handleViewPageClick = () => {
     navigate('/View-Page'); // Navigate to PublishPage
   };
 
+  // Sample data (replace this with data from your database)
+  const sampleData = [
+    { id: 1, title: 'Kabihasnang Asya', questions: 5, lastUpdated: '4 hours ago' },
+    { id: 2, title: 'Another Topic', questions: 3, lastUpdated: '1 day ago' },
+    // Add more sample data as needed
+  ];
+
   return (
-    <div className="flex-1  bg-custom-brownbg pb-10">
+    <div className="flex-1 h-screen bg-custom-brownbg pb-10">
       {/* Section with Library Title */}
       <section className="flex pt-10 px-10 text-center text-3xl font-bold text-custom-brownnav">
         <h1>LIBRARY</h1>
@@ -98,40 +103,40 @@ function Library() {
         </button>
       </div>
 
-      {/* White Container with Square */}
-      {[...Array(4)].map((_, index) => (
-        <div key={index} className="px-10 pt-10">
-          <div className="flex bg-white shadow-[0_0_15px_#AEA9A9] p-6 items-center rounded-lg">
-            {/* Square inside the container */}
-            <div className="w-28 h-28 bg-gray-300 mr-4 rounded-lg"></div>
-            {/* Text Container */}
-            <div className="flex flex-col gap-2 flex-grow mr-4">
-              <div
-                className="text-lg font-semibold text-gray-800 truncate"
-                style={{ maxWidth: '200px' }} // Adjust width as needed
-              >
-                Kabihasnang Asya
+      {/* Container for displaying data */}
+      <div className="px-10 pt-10">
+        <div className="grid grid-cols-1 gap-4">
+          {sampleData.map((item) => (
+            <div key={item.id} className="flex bg-white shadow-[0_0_15px_#AEA9A9] p-6 items-center rounded-lg">
+              {/* Square inside the container */}
+              <div className="w-28 h-28 bg-gray-300 mr-4 rounded-lg"></div>
+              {/* Text Container */}
+              <div className="flex flex-col gap-2 flex-grow mr-4">
+                <div className="text-lg font-semibold text-gray-800 truncate" style={{ maxWidth: '200px' }}>
+                  {item.title}
+                </div>
+                <div className="text-sm text-gray-600">{item.questions} questions</div>
+                <div className="text-sm text-gray-500">{item.lastUpdated}</div>
               </div>
-              <div className="text-sm text-gray-600">5 questions</div>
-              <div className="text-sm text-gray-500">4 hours ago</div>
+              {/* Button */}
+              <button
+                className="bg-custom-brownnav text-white font-bold py-2 px-6 rounded-md hover:bg-custom-brownnav transition-all duration-300"
+                onClick={handleViewPageClick} // Attach the handleViewPageClick function to the button
+              >
+                View
+              </button>
             </div>
-            {/* Button */}
-            <button
-              className="bg-custom-brownnav text-white font-bold py-2 px-6 rounded-md hover:bg-custom-brownnav transition-all duration-300"
-              onClick={handleViewPageClick} // Attach the handlegotolibraryclick function to the button
-            >
-              View
-            </button>
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
+
       <CreateModal
         createquizmodal={createquizmodal}
         createquizsetModal={createquizsetModal}
         createquiztoggleModal={createquiztoggleModal}
       />
     </div>
-  )
+  );
 }
 
-export default Library
+export default Library;

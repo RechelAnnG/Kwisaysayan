@@ -141,7 +141,7 @@ function PublishPage() {
 
               <div className="mt-5">
                 {/* Question Title */}
-                <h1 className="text-sm font-bold text-custom-brownbg mb-1">What is the shape of the Earth?</h1>
+                <h1 className="text-sm font-bold text-custom-brownbg mb-1">Sino ang pambansang bayani ng Pilipinas?</h1>
               </div>
 
               {/* Grid Container */}
@@ -153,7 +153,7 @@ function PublishPage() {
                     alt="Answer Indicator"
                     className="w-5 h-5 mr-2"
                   />
-                  <label className="text-sm font-bold text-custom-brownbg">Sphere</label>
+                  <label className="text-sm font-bold text-custom-brownbg">Jose Rizal</label>
                 </div>
                 <div className="flex items-center">
                   <img
@@ -161,7 +161,7 @@ function PublishPage() {
                     alt="Answer Indicator"
                     className="w-5 h-5 mr-2"
                   />
-                  <label className="text-sm font-bold text-custom-brownbg">Flat</label>
+                  <label className="text-sm font-bold text-custom-brownbg">Andres Bonifacio</label>
                 </div>
                 <div className="flex items-center">
                   <img
@@ -169,7 +169,7 @@ function PublishPage() {
                     alt="Answer Indicator"
                     className="w-5 h-5 mr-2"
                   />
-                  <label className="text-sm font-bold text-custom-brownbg">Oval</label>
+                  <label className="text-sm font-bold text-custom-brownbg">Apolinario Mabini</label>
                 </div>
 
                 {/* Second Row (2 Columns) */}
@@ -179,7 +179,7 @@ function PublishPage() {
                     alt="Answer Indicator"
                     className="w-5 h-5 mr-2"
                   />
-                  <label className="text-sm font-bold text-custom-brownbg">Cube</label>
+                  <label className="text-sm font-bold text-custom-brownbg">Lapu-Lapu</label>
                 </div>
                 <div className="flex items-center">
                   <img
@@ -187,7 +187,7 @@ function PublishPage() {
                     alt="Answer Indicator"
                     className="w-5 h-5 mr-2"
                   />
-                  <label className="text-sm font-bold text-custom-brownbg">Pyramid</label>
+                  <label className="text-sm font-bold text-custom-brownbg">Ferdinand Magellan</label>
                 </div>
               </div>
             </div>
